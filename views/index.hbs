@@ -1,0 +1,15 @@
+{{> header}}
+<div class='ui container grid'>
+    <div class='ui grid'>
+        {{#each data}}
+        <div class='five wide column'>
+            <img class='ui fluid image ' src="{{this.attributes.url}}" alt="">
+        </div> {{/each}}
+    </div>
+    <div>
+        <br>
+        <br>
+        <a href="/">Go to Home Page</a>
+    </div>
+</div>
+{{> footer}}

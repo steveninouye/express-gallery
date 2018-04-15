@@ -1,0 +1,13 @@
+.five,
+.wide,
+.column {
+  overflow: hidden;
+  max-height: 200px;
+  border: solid 1px black;
+  /* border-radius: 25px; */
+}
+.image {
+  border-radius: 25px;
+  height: 90px;
+  position: relative;
+}
