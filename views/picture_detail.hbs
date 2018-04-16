@@ -1,0 +1,24 @@
+{{> header}}
+<div class='ui container grid'>
+
+
+    <div class="eleven wide column ">
+        <div class='sixteen wide column'>
+            <img class='ui fluid image ' src="{{selectedPicture.url}}"> @{{getUsername selectedPicture.email}} -
+            <a href="{{selectedPicture.url}}">{{shortenURL selectedPicture.url}}</a>
+            <br>
+            <br> {{selectedPicture.description}}
+
+        </div>
+    </div>
+
+
+    <div class="five wide column" id="sampleImages">
+        {{#each allPictures}}
+        <img src='{{this.url}}'>{{this.description}}
+        <br> {{/each}}
+    </div>
+
+
+</div>
+{{> footer}}

@@ -1,15 +1,20 @@
 {{> header}}
-<div class='ui container grid'>
-    <div class='ui grid'>
-        {{#each data}}
-        <div class='five wide column'>
-            <img class='ui fluid image ' src="{{this.attributes.url}}" alt="">
+<div class='ui container'>
+    <div class='ui three column grid'>
+        {{#each allPictures}}
+        <div class='column'>
+            <div class='picture'>
+                <a href="/gallery/{{this.picture_id}}">
+                    <img class='ui fluid image ' src="{{this.url}}">
+                </a>
+            </div>
+            <div class='email'>
+                <a href="/gallery/{{this.picture_id}}">
+                    <span class='username'>@{{getUsername this.email}}</span>
+                    -
+                    <span class="description">{{this.description}}</span>
+                </a>
+            </div>
         </div> {{/each}}
     </div>
-    <div>
-        <br>
-        <br>
-        <a href="/">Go to Home Page</a>
-    </div>
-</div>
-{{> footer}}
+</div> {{> footer}}

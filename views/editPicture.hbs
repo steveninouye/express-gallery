@@ -1,0 +1,21 @@
+{{> header}}
+<div class='ui container'>
+    <form class='ui form' action="/ID" method="POST">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="field">
+            <label>Author:</label>
+            <input type="text" name="author">
+        </div>
+        <div class="field">
+            <label>Link:</label>
+            <input type="text" name="link">
+        </div>
+        <div class="field">
+            <label>Description:</label>
+            <input type="text" name="description">
+        </div>
+        <button class="ui button">Add Picture</button>
+    </form>
+
+</div>
+{{> footer}}

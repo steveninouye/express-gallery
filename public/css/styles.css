@@ -1,13 +1,51 @@
-.five,
-.wide,
-.column {
-  overflow: hidden;
-  max-height: 200px;
-  border: solid 1px black;
-  /* border-radius: 25px; */
+* {
+  border: 1px dashed darkslategrey;
 }
-.image {
-  border-radius: 25px;
-  height: 90px;
+
+/* targets box that holds picture, description, and user */
+div.ui.grid > div.five.wide.column {
+  overflow: hidden;
+  height: 200px;
+  margin-top: 5px;
+  /* border: 1px solid blue; */
+  padding: 8px;
+}
+
+/* div that holds picture */
+div.five.wide.column > div.picture {
+  /* border: 1px solid red; */
+  height: 150px;
+  border-radius: 20px;
+  overflow: hidden;
   position: relative;
+}
+div.five.wide.column > div.picture > a > img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+div.five.wide.column > div.email {
+  /* border: 1px solid green; */
+  height: 20px;
+}
+
+.ui,
+.fluid,
+.image {
+  position: relative;
+}
+
+/**************Picture_Details Page********************************/
+div.ui.container.grid > img {
+  height: 100%;
+  width: 100%;
+}
+#sampleImages {
+  height: 10000px;
+}
+#sampleImages > img {
+  /* object-fit: contain; */
+  width: 100%;
 }
