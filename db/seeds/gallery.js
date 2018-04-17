@@ -22,18 +22,6 @@ exports.seed = function(knex, Promise) {
             .then(function() {
               return knex('pictures').insert([
                 {
-                  author: 1,
-                  url:
-                    'https://www.tescobank.com/assets/website/img/pet-insurance/dogs/pug-info-446x320px.jpg',
-                  description: 'This is a dog'
-                },
-                {
-                  author: 3,
-                  url:
-                    'https://www.tescobank.com/assets/website/img/pet-insurance/dogs/pug-exercise-446x320px.jpg',
-                  description: 'this ia a running pug... so cute'
-                },
-                {
                   author: 5,
                   url:
                     'https://vetstreet.brightspotcdn.com/dims4/default/354d0cf/2147483647/thumbnail/645x380/quality/90/?url=https%3A%2F%2Fvetstreet-brightspot.s3.amazonaws.com%2Fdc%2Fc4%2F8ccd3a28438d81b2f2f5d8031a05%2Fpug-ap-r82p3q-645.jpg',
@@ -94,6 +82,18 @@ exports.seed = function(knex, Promise) {
                   description: 'King Pug'
                 },
                 {
+                  author: 1,
+                  url:
+                    'https://www.tescobank.com/assets/website/img/pet-insurance/dogs/pug-info-446x320px.jpg',
+                  description: 'This is a dog...  so cute'
+                },
+                {
+                  author: 3,
+                  url:
+                    'https://www.tescobank.com/assets/website/img/pet-insurance/dogs/pug-exercise-446x320px.jpg',
+                  description: 'this is a running pug... so cute'
+                },
+                {
                   author: 9,
                   url:
                     'http://cdn1-www.dogtime.com/assets/uploads/gallery/pug-dog-breed-pictures/1-multi.jpg',
@@ -152,6 +152,41 @@ exports.seed = function(knex, Promise) {
                   url:
                     'http://cdn3-www.dogtime.com/assets/uploads/gallery/pug-dog-breed-pictures/10-sleeping.jpg',
                   description: 'Tired Dog'
+                },
+                {
+                  author: 1,
+                  url:
+                    'https://qph.fs.quoracdn.net/main-qimg-ba9c1a32d063f9d53f9e95db7bdfb390-c',
+                  description: 'Happy Pug... Happy Life'
+                },
+                {
+                  author: 2,
+                  url:
+                    'https://qph.fs.quoracdn.net/main-qimg-2ba7664bcdeae9e1ddda1be1d17dfc89-c',
+                  description: 'Please Feed Me'
+                },
+                {
+                  author: 3,
+                  url:
+                    'https://www.luvbat.com/uploads/cute_pug_with_backpack__6264877477.jpg',
+                  description: 'Cute Backpack Pug'
+                },
+                {
+                  author: 3,
+                  url:
+                    'http://aboutpug.com/wp-content/uploads/2017/07/cute-pug-puppy-all-dressed-up.jpg',
+                  description: 'Red Pug'
+                },
+                {
+                  author: 5,
+                  url:
+                    'http://www.clinicaveterinariaromareda.com/wp-content/uploads/carlino.jpg',
+                  description: 'Happy PUg'
+                },
+                {
+                  author: 5,
+                  url: 'https://wallpapercave.com/wp/6gRihl9.jpg',
+                  description: 'Sad Pug'
                 }
               ]);
             });

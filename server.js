@@ -37,6 +37,20 @@ app.get('/', (req, res) => {
     });
 });
 
+app.get('/api', (req, res) => {
+  //responds with knex query
+  Pictures.fetchAll({ withRelated: ['author'] })
+    .then(result => {
+      const allPictures = combineAttributes(result);
+      res.json(allPictures);
+      //   res.render('index', { result });
+    })
+    .catch(err => {
+      console.log(err);
+      res.json(err);
+    });
+});
+
 app.listen(PORT, () => {
   console.log(`Server up on port ${PORT}`);
 });

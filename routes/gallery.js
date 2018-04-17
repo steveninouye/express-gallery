@@ -2,6 +2,7 @@ const router = require('express').Router();
 const bodyParser = require('body-parser');
 const Users = require('../db/models/Users');
 const Pictures = require('../db/models/Pictures');
+const knex = require('../db/knex');
 
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(require('express-method-override')());
@@ -80,6 +81,15 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   //delete a single gallery photo identified by the :id
+  Pictures.where({ picture_id: req.params.id })
+    .destroy()
+    .then(result => {
+      res.redirect('/');
+    })
+    .catch(err => {
+      console.log(err);
+      res.send(err);
+    });
 });
 
 module.exports = router;
