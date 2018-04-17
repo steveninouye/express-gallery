@@ -19,15 +19,16 @@ hbs.registerHelper('shortenURL', str => {
   return str;
 });
 
+const { combineAttributes, randomArraySort } = require('./functions');
+
 app.use('/gallery', require('./routes/gallery'));
 
 app.get('/', (req, res) => {
   Pictures.fetchAll({ withRelated: ['author'] })
     .then(result => {
-      const allPictures = result.models.map(e =>
-        Object.assign(e.attributes, e.relations.author.attributes)
-      );
-      res.render('index', { allPictures });
+      const allPictures = combineAttributes(result);
+      const randomAllPictures = randomArraySort(allPictures);
+      res.render('index', { randomAllPictures });
       //   res.render('index', { result });
     })
     .catch(err => {

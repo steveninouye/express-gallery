@@ -3,7 +3,7 @@
 }
 
 /* targets box that holds picture, description, and user */
-div.ui.grid > div.five.wide.column {
+div.three.column.grid > div.column {
   overflow: hidden;
   height: 200px;
   margin-top: 5px;
@@ -12,21 +12,22 @@ div.ui.grid > div.five.wide.column {
 }
 
 /* div that holds picture */
-div.five.wide.column > div.picture {
+div.column > div.picture {
   /* border: 1px solid red; */
   height: 150px;
   border-radius: 20px;
   overflow: hidden;
   position: relative;
 }
-div.five.wide.column > div.picture > a > img {
+
+div.column > div.picture > a > img {
   position: absolute;
   top: 0;
   bottom: 0;
   margin: auto;
 }
 
-div.five.wide.column > div.email {
+div.column > div.email {
   /* border: 1px solid green; */
   height: 20px;
 }
@@ -45,7 +46,7 @@ div.ui.container.grid > img {
 #sampleImages {
   height: 10000px;
 }
-#sampleImages > img {
+#sampleImages > a > img {
   /* object-fit: contain; */
   width: 100%;
 }

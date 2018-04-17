@@ -6,15 +6,11 @@ const Pictures = require('../db/models/Pictures');
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(require('express-method-override')());
 
-const combineAttributes = fetchedData => {
-  return fetchedData.models.map(e =>
-    Object.assign(e.attributes, e.relations.author.attributes)
-  );
-};
-
-const findPictureByID = (array, id) => {
-  return array.filter(e => e.picture_id === id)[0];
-};
+const {
+  combineAttributes,
+  findPictureByID,
+  randomArraySort
+} = require('../functions');
 
 router.get('/new', (req, res) => {
   res.render('newPicture');
@@ -28,7 +24,8 @@ router.get('/:id', (req, res) => {
         allPictures,
         Number(req.params.id)
       );
-      res.render('picture_detail', { selectedPicture, allPictures });
+      const randomAllPictures = randomArraySort(allPictures);
+      res.render('picture_detail', { selectedPicture, randomAllPictures });
       //   res.render('index', { result });
     })
     .catch(err => {
@@ -51,6 +48,18 @@ router.get('/:id/edit', (req, res) => {
 
 router.post('/', (req, res) => {
   //create a new gallery photo
+  Pictures.forge(req.body)
+    .save()
+    .then(result => {
+      return Pictures.where('picture_id', result.attributes.picture_id).fetch();
+    })
+    .then(result => {
+      res.redirect(`/gallery/${result.attributes.picture_id}`);
+    })
+    .catch(err => {
+      console.log(err);
+      res.send(err);
+    });
 });
 
 router.put('/:id', (req, res) => {
