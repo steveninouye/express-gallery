@@ -1,0 +1,2 @@
+CREATE USER user3 WITH ENCRYPTED PASSWORD 'password';
+CREATE DATABASE express_gallery OWNER user3;
