@@ -1,18 +1,18 @@
 {{> header}}
 <div class='ui container'>
-    <form class='ui form' action="/ID" method="POST">
+    <form class='ui form' action="/gallery/{{picture.picture_id}}" method="POST">
         <input type="hidden" name="_method" value="PUT">
         <div class="field">
             <label>Author:</label>
-            <input type="text" name="author">
+            <input type="text" name="author" value="{{picture.author}}">
         </div>
         <div class="field">
             <label>Link:</label>
-            <input type="text" name="link">
+            <input type="text" name="url" value="{{picture.url}}">
         </div>
         <div class="field">
             <label>Description:</label>
-            <input type="text" name="description">
+            <input type="text" name="description" value="{{picture.description}}">
         </div>
         <button class="ui button">Add Picture</button>
     </form>
