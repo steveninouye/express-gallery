@@ -14,8 +14,15 @@
             <label>Description:</label>
             <input type="text" name="description" value="{{picture.description}}">
         </div>
-        <button class="ui button">Add Picture</button>
+        <button class="ui button">Edit Picture</button>
     </form>
+    <br>
+    <hr>
+    <br>
+    <form class='ui form' action="/gallery/{{picture.picture_id}}" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
 
+        <button class="ui mini negative button">Delete Picture</button>
+    </form>
 </div>
 {{> footer}}

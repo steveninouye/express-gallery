@@ -1,6 +1,6 @@
-* {
+/* * {
   border: 1px dashed darkslategrey;
-}
+} */
 
 /* targets box that holds picture, description, and user */
 div.three.column.grid > div.column {
